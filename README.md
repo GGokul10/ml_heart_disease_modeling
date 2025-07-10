@@ -1,75 +1,86 @@
-# ml_heart_disease_modeling
-Data Science Fundamentals with Python
-Heart Disease Modeling Project
-July 2025
-1 Introduction
-This project uses the UCI Heart Disease dataset to explore core data science techniques: classification, regression, dimensionality reduction, and unsupervised clustering. You’ll apply everything you’ve learned to analyze patterns
-related to heart disease using real clinical data.
-2 Dataset Reference
-Use the Cleveland dataset available here. It consists of 303 instances, 13 clinical
-features and one numerical target (representing the presence or absence of heart
-disease).
-• Read the dataset description carefully to understand what the 14 different
-features represent.
-• Use the data loading code provided in the UCI website and import the
-dataset directly onto your Jupyter notebook.
-3 Tasks and Instructions
-3.1 EDA & Data Preprocessing
-This is an integral step in any Machine Learning task.
-• Start off with Exploratory Data Analysis by looking at the first few
-rows, checking out the number of null values, running df.describe(), df.info(),
-etc.
-• Handle missing values through imputation. Fill the empty cells with the
-median of the remaining values in that particular column.
-• Convert the num column in the target dataset to binary:
-– 0 remains 0 (no disease)
-– 1-4 should all be replaced with 1 (presence of disease)
-1
-• Normalize all the features using the StandardScaler tool from the sklearn.preprocessing
-module.
-3.2 Heart Disease Prediction
-The goal of this task is to create a machine learning model trained on the
-given dataset that would predict whether a person has heart disease or not.
-Supervised classification algorithms will be used for this purpose:
-• Train two models (scikit-learn implementation) after splitting the dataset
-into train and test parts:
-– Logistic regression
-– Random Forest Classifier
-• Evaluate and compare the two using:
-– Accuracy
-– Precision, Recall, F1-Score
-– Confusion Matrix
-3.3 Cholesterol Level Prediction
-In this task, we will build a multiple linear regression model to predict the
-serum cholesterol based on the remaining 12 features and also analyze the
-major contributing factors to cholesterol:
-• Ensure that all the features but the serum cholesterol level are normalized.
-• Using scikit-learn, implement a Linear Regression model after splitting
-the dataset into train and test datasets.
-• Plot a correlation matrix using df.corr() in pandas and visualize a
-heatmap using seaborn.heatmap()
-• Comment on which features are most correlated with serum cholesterol.
-3.4 Principal Component Analysis
-The goal of this task is to reduce the dataset’s dimensionality while retaining
-most of the variance, for future unsupervised learning tasks.
-• Ensure that all the features are normalized.
-• Implement PCA from the sklearn.decomposition module.
-– Set parameters such that 95% of the variance is retained (feel free to
-play around with this value).
-• Plot the explained variance ratio for each component.
-• Output the shape of the reduced dataset.
-2
-3.5 Grouping Patients based on Health Profiles
-Now we intend to perform K-means clustering, an unsupervised learning
-algorithm, on the PCA-reduced dataset, thus grouping patients based on their
-health profile.
-• Apply KMeans from the sklearn.cluster module on the PCA-reduced dataset.
-• Use the Elbow method and the Silhouette score to determine the
-optimum number of of clusters.
-• Visualize the clusters on a 2D PCA scatterplot by taking only the first
-two components.
-4 Submission Requirements
-• A single Jupyter notebook with clean code and comments.
-• Segment the notebook by titling sections in markdown cells
-• Further, use markdown cells for your inferences/explanations.
-3
+# Heart Disease Modeling Project 🫀
+
+**Data Science Fundamentals with Python**  
+**Project Duration:** June 2025 – July 2025  
+**Dataset:** [UCI Heart Disease Dataset (Cleveland subset)](https://archive.ics.uci.edu/ml/datasets/heart+Disease)
+
+---
+
+## 📌 Overview
+
+This project explores key data science concepts including **classification, regression, dimensionality reduction**, and **unsupervised clustering** using real-world clinical data. The objective is to develop models that predict heart disease and analyze patient health profiles.
+
+---
+
+## 🧠 Key Concepts Applied
+
+- Exploratory Data Analysis (EDA)
+- Data Preprocessing (Imputation, Normalization, Encoding)
+- Supervised Learning (Logistic Regression, Random Forest)
+- Regression Analysis (Multiple Linear Regression)
+- Dimensionality Reduction (Principal Component Analysis - PCA)
+- Unsupervised Learning (KMeans Clustering)
+
+---
+
+## 📂 Dataset Details
+
+- **Source:** UCI Machine Learning Repository
+- **Subset Used:** Cleveland
+- **Instances:** 303
+- **Features:** 13 clinical features + 1 target
+- **Target:** Presence or absence of heart disease (binary classification)
+
+---
+
+## 🧪 Project Workflow
+
+### 1. EDA & Data Preprocessing
+- Identified and handled missing values via median imputation.
+- Converted multi-class target to binary (0: no disease, 1–4: disease).
+- Normalized features using `StandardScaler`.
+
+### 2. Heart Disease Prediction
+- Built classification models:
+  - Logistic Regression
+  - Random Forest Classifier
+- Evaluated performance using:
+  - Accuracy, Precision, Recall, F1-Score
+  - Confusion Matrix
+
+### 3. Cholesterol Level Prediction
+- Built a multiple linear regression model.
+- Predicted serum cholesterol using 12 features.
+- Plotted correlation matrix and Seaborn heatmap.
+- Analyzed feature influence on cholesterol levels.
+
+### 4. Principal Component Analysis (PCA)
+- Reduced dataset dimensionality while retaining 95% variance.
+- Visualized explained variance ratios.
+- Used PCA output for clustering.
+
+### 5. KMeans Clustering for Patient Profiling
+- Applied KMeans clustering on PCA-reduced dataset.
+- Determined optimal cluster count using:
+  - Elbow Method
+  - Silhouette Score
+- Visualized clusters using first two PCA components.
+
+---
+
+## 📊 Results & Insights
+
+- Random Forest outperformed Logistic Regression on classification metrics.
+- Certain features (e.g., age, chest pain type) were strongly correlated with cholesterol levels.
+- PCA efficiently reduced data noise while preserving variance.
+- KMeans revealed 3–4 distinct patient clusters based on health patterns.
+
+---
+
+## 🛠️ Tools & Libraries
+
+- Python, Jupyter Notebook  
+- Pandas, NumPy, Matplotlib, Seaborn  
+- scikit-learn (LogisticRegression, RandomForest, PCA, KMeans, metrics)
+
+---
